@@ -23,6 +23,16 @@ jobs:
         with:
           install: true
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies and run fetch-mirrors.js
+        run: |
+          npm install
+          node src/fetch-mirrors.js
+
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
