@@ -26,12 +26,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '16' # You can adjust this to a compatible version if needed.
 
       - name: Install dependencies and run fetch-mirrors.js
+        working-directory: docker-apt-cacher-ng-1/src
         run: |
           npm install
-          node src/fetch-mirrors.js
+          node fetch-mirrors.js
+        shell: bash
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
