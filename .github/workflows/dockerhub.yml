@@ -29,10 +29,9 @@ jobs:
           node-version: '16' # You can adjust this to a compatible version if needed.
 
       - name: Install dependencies and run fetch-mirrors.js
-        working-directory: docker-apt-cacher-ng-1/src
         run: |
           npm install
-          node fetch-mirrors.js
+          node src/fetch-mirrors.js
         shell: bash
 
       - name: Login to DockerHub
