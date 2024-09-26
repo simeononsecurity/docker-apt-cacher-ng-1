@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:stable
 
 RUN set -uex; \
     apt-get update -y; \
