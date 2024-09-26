@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
@@ -50,7 +50,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/acng:latest
-            ghcr.io/${{ github.repository_owner }}/${{ secrets.DOCKER_USERNAME }}-acng:latest
+            ghcr.io/${{ github.repository_owner }}/acng:latest
           github-token: ${{ secrets.PAT_TOKEN }}
 
       - name: Build and push AU image
@@ -67,7 +67,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/acng:latest-au
-            ghcr.io/${{ github.repository_owner }}/${{ secrets.DOCKER_USERNAME }}-acng:latest-au
+            ghcr.io/${{ github.repository_owner }}/acng:latest-au
           github-token: ${{ secrets.PAT_TOKEN }}
 
       - name: Build and push UK image
@@ -84,7 +84,7 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/acng:latest-uk
-            ghcr.io/${{ github.repository_owner }}/${{ secrets.DOCKER_USERNAME }}-acng:latest-uk
+            ghcr.io/${{ github.repository_owner }}/acng:latest-uk
           github-token: ${{ secrets.PAT_TOKEN }}
 
       - name: Build and push US image
@@ -101,5 +101,5 @@ jobs:
           cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/acng:latest-us
-            ghcr.io/${{ github.repository_owner }}/${{ secrets.DOCKER_USERNAME }}-acng:latest-us
+            ghcr.io/${{ github.repository_owner }}/acng:latest-us
           github-token: ${{ secrets.PAT_TOKEN }}
