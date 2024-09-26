@@ -1,5 +1,8 @@
 FROM debian:stable
 
+# Set DEBIAN_FRONTEND to noninteractive to prevent interactive prompts during package installations
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN set -uex; \
     apt-get update -y; \
     apt-get install apt-cacher-ng -y; \
