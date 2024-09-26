@@ -1,4 +1,7 @@
-FROM deployable/acng:latest
+FROM simeononsecurity/acng:latest
+
+# Set DEBIAN_FRONTEND to noninteractive to prevent interactive prompts during package installations
+ENV DEBIAN_FRONTEND=noninteractive
 
 ENV ACNG_LOCALE="au"
 
